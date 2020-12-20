@@ -1,9 +1,24 @@
 
-const drivers = ['Lewis Hamilton', 'Valtteri Bottas', 'Carlos Sainz', 'Charles Leclerc', 'Max Verstappen', 'Sergio Perez', 'Daniel Ricciardo', 'Lando Norris', 'Esteban Ocon', 'Fernando Alonso', ' Yuki Tsunoda', 'Pierre Gasly', 'Sebastian Vettel', 'Lance Stroll', 'Kimi Raikkonen', 'Antonio Giovinazzi', 'Mich Schumacher', 'Nikita Mazepin', 'George Russel', 'Nicholas Latifi'];
+const drivers = ['Lewis Hamilton', 'Valtteri Bottas', 'Carlos Sainz',
+'Charles Leclerc', 'Max Verstappen', 'Sergio Perez', 'Daniel Ricciardo', 
+'Lando Norris', 'Esteban Ocon', 'Fernando Alonso', ' Yuki Tsunoda',
+'Pierre Gasly', 'Sebastian Vettel', 'Lance Stroll', 'Kimi Raikkonen',
+'Antonio Giovinazzi', 'Mich Schumacher', 'Nikita Mazepin', 'George Russel',
+'Nicholas Latifi'];
 
-const teams = ['Mercedes', 'Mercedes', 'Ferrari', 'Ferrari', 'Red Bull', 'Red Bull', 'McLaren', 'McLaren', 'Alpine', 'Alpine', 'AlphaTauri', 'AlphaTauri', 'Aston Martin', 'Aston Martin', 'Alfa Romeo', 'Alfa Romeo', 'Haas', 'Haas', 'Willimas', 'Williams'];
+const teams = ['Mercedes', 'Mercedes', 'Ferrari', 'Ferrari', 'Red Bull',
+'Red Bull', 'McLaren', 'McLaren', 'Alpine', 'Alpine', 'AlphaTauri',
+'AlphaTauri', 'Aston Martin', 'Aston Martin', 'Alfa Romeo', 'Alfa Romeo',
+'Haas', 'Haas', 'Willimas', 'Williams'];
 
-const tracks = ['Australia (Melbourne)', 'Bahrain (Sakhir)', 'China (Shanghai)', 'Spain (Barcelona)', 'Monaco (Monaco)', 'Azerbaijan (Baku)', 'Canada (Montreal)', 'France (Le Castellet)', 'Austria (Spielberg)', 'United Kingdom (Silverstone)', 'Hungary (Budapest)', 'Belgium (Spa)', 'Netherlands (Zandvoort)', 'Italy (Monza)', 'Russia (Sochi)', 'Singapore (Singapore)', 'Japan (Suzuka)', 'USA (Austin)', 'Mexico (Mexico City)', 'Brazil (Sao Paulo)', 'Saudi Arabia (Jeddah)', 'Abu Dhabi (Abu Dhabi)'];
+const tracks = ['Australia (Melbourne)', 'Bahrain (Sakhir)',
+'China (Shanghai)', 'Spain (Barcelona)', 'Monaco (Monaco)',
+'Azerbaijan (Baku)', 'Canada (Montreal)', 'France (Le Castellet)',
+'Austria (Spielberg)', 'United Kingdom (Silverstone)',
+'Hungary (Budapest)', 'Belgium (Spa)', 'Netherlands (Zandvoort)',
+'Italy (Monza)', 'Russia (Sochi)', 'Singapore (Singapore)',
+'Japan (Suzuka)', 'USA (Austin)', 'Mexico (Mexico City)',
+'Brazil (Sao Paulo)', 'Saudi Arabia (Jeddah)', 'Abu Dhabi (Abu Dhabi)'];
 
 let driverTeam = [];
 
@@ -40,10 +55,13 @@ function randomTrack() {
     return randomTrack
 };
 
-// loops through drivers and teams arrays, passing them through factory function driverAndTeamGenerator to create driverTeam object and push into driverTeam array
+// loops through drivers and teams arrays, passing 
+// them through factory function driverAndTeamGenerator to create
+// driverTeam object and push into driverTeam array
 
 function messageOutput() {
-    console.log(`Here are my guesses for winners of the ${randomTrack()} Grand Prix:\n`);
+    console.log(`Here are my guesses for winners of the ${randomTrack()} 
+    Grand Prix:\n`);
     for (let obj of driverTeam) {
         console.log(`${obj.driver} driving for ${obj.team} finished in position number: ${obj.position}.\n`)
     }
