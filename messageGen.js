@@ -59,12 +59,19 @@ function randomTrack() {
 // them through factory function driverAndTeamGenerator to create
 // driverTeam object and push into driverTeam array
 
+const getGetOrdinal = function(n) {
+    const s=["th","st","nd","rd"],
+        v=n%100;
+    return n+(s[(v-20)%10]||s[v]||s[0]);
+ }
+
 function messageOutput() {
     console.log(`Here are my guesses for winners of the ${randomTrack()} Grand Prix:\n`);
     for (let obj of driverTeam) {
-        console.log(`${obj.driver} driving for ${obj.team} finished in position number: ${obj.position}.\n`)
+        console.log(`${obj.driver} driving for ${obj.team} finished in ${getGetOrdinal(obj.position)} place.\n`)
     }
 };
+
 
 messageOutput()
 
