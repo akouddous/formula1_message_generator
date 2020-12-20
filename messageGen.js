@@ -1,28 +1,11 @@
-/*
-Codecademy.com instructions: Create random message generator of choice using Javascript.
 
-Randomly generated guesses: Formula 1 Grand Prix end-of-race results by driver, team, and race track.
-Data1: Name of driver and team in 1st place
-Data2: Name of driver and team in 2nd place
-Data3: race track
-*/
+const drivers = ['Lewis Hamilton', 'Valtteri Bottas', 'Carlos Sainz', 'Charles Leclerc', 'Max Verstappen', 'Sergio Perez', 'Daniel Ricciardo', 'Lando Norris', 'Esteban Ocon', 'Fernando Alonso', ' Yuki Tsunoda', 'Pierre Gasly', 'Sebastian Vettel', 'Lance Stroll', 'Kimi Raikkonen', 'Antonio Giovinazzi', 'Mich Schumacher', 'Nikita Mazepin', 'George Russel', 'Nicholas Latifi'];
 
-const drivers = ['Sergio Perez', 'Max Verstappen', 'Lewis Hamilton', 'Valteri Bottas', 'Daniel Ricciardo', 'Lando Norris', 'George Russell', 'Nicholas Latifi'];
+const teams = ['Mercedes', 'Mercedes', 'Ferrari', 'Ferrari', 'Red Bull', 'Red Bull', 'McLaren', 'McLaren', 'Alpine', 'Alpine', 'AlphaTauri', 'AlphaTauri', 'Aston Martin', 'Aston Martin', 'Alfa Romeo', 'Alfa Romeo', 'Haas', 'Haas', 'Willimas', 'Williams'];
 
-const teams = ['Red Bull', 'Red Bull', 'Mercedes', 'Mercedes', 'McLaren', 'McLaren', 'Williams', 'Williams'];
+const tracks = ['Australia (Melbourne)', 'Bahrain (Sakhir)', 'China (Shanghai)', 'Spain (Barcelona)', 'Monaco (Monaco)', 'Azerbaijan (Baku)', 'Canada (Montreal)', 'France (Le Castellet)', 'Austria (Spielberg)', 'United Kingdom (Silverstone)', 'Hungary (Budapest)', 'Belgium (Spa)', 'Netherlands (Zandvoort)', 'Italy (Monza)', 'Russia (Sochi)', 'Singapore (Singapore)', 'Japan (Suzuka)', 'USA (Austin)', 'Mexico (Mexico City)', 'Brazil (Sao Paulo)', 'Saudi Arabia (Jeddah)', 'Abu Dhabi (Abu Dhabi)'];
 
-const tracks = ['Monza', 'Silverstone', 'Bahrain']
-
-let driverTeam = []
-
-function driverAndTeamGenerator(driver, team) {
-    const driverTeamObj = {
-        driver: driver,
-        team: team,
-        position: 0
-    }
-    driverTeam.push(driverTeamObj)
-};
+let driverTeam = [];
 
 function randomPositionArray() {
     let randomPositionArray = [];
@@ -35,14 +18,15 @@ function randomPositionArray() {
     return randomPositionArray
 };
 
-function randomTrack() {
-    let randomTrack = tracks[Math.floor(Math.random() * tracks.length)]
-    return randomTrack
+function driverAndTeamGenerator(driver, team) {
+    const driverTeamObj = {
+        driver: driver,
+        team: team,
+        position: 0
+    };
+    driverTeam.push(driverTeamObj);
 };
 
-
-
-// loops through drivers and teams arrays, passing them through factory function driverAndTeamGenerator to create driverTeam object and push into driverTeam array
 for (let driver in drivers) {
     driverAndTeamGenerator(drivers[driver], teams[driver])
     let positions = randomPositionArray();
@@ -50,6 +34,13 @@ for (let driver in drivers) {
         driverTeam[i].position = positions[i]
     }
 };
+
+function randomTrack() {
+    let randomTrack = tracks[Math.floor(Math.random() * tracks.length)]
+    return randomTrack
+};
+
+// loops through drivers and teams arrays, passing them through factory function driverAndTeamGenerator to create driverTeam object and push into driverTeam array
 
 function messageOutput() {
     console.log(`Here are my guesses for winners of the ${randomTrack()} Grand Prix:\n`);
@@ -59,6 +50,8 @@ function messageOutput() {
 };
 
 messageOutput()
+
+console.log(driverTeam)
 
 
 
