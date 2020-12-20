@@ -60,8 +60,7 @@ function randomTrack() {
 // driverTeam object and push into driverTeam array
 
 function messageOutput() {
-    console.log(`Here are my guesses for winners of the ${randomTrack()} 
-    Grand Prix:\n`);
+    console.log(`Here are my guesses for winners of the ${randomTrack()} Grand Prix:\n`);
     for (let obj of driverTeam) {
         console.log(`${obj.driver} driving for ${obj.team} finished in position number: ${obj.position}.\n`)
     }
