@@ -40,6 +40,7 @@ function driverAndTeamGenerator(driver, team) {
         position: 0
     };
     driverTeam.push(driverTeamObj);
+    
 };
 
 for (let driver in drivers) {
@@ -49,6 +50,8 @@ for (let driver in drivers) {
         driverTeam[i].position = positions[i]
     }
 };
+
+driverTeam.sort((a, b) => (a.position > b.position) ? 1 : -1)
 
 function randomTrack() {
     let randomTrack = tracks[Math.floor(Math.random() * tracks.length)]
